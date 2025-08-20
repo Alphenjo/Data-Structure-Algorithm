@@ -46,9 +46,25 @@ void printList(TNode *head) {
     printf("END\n");
 }
 
+TNode* insertAtBeginning(TNode *head) {
+    TNode *Newnode = (TNode*) malloc(sizeof(TNode));
+    if(Newnode == NULL) {
+        printf("Memory Allocation Failed!\n");
+        return head;
+    }
+    printf("\nEnter data to insert at beginning: ");
+    scanf("%d", &Newnode->data);
+
+    Newnode->next = head;
+    head = Newnode;
+    return head;
+}
+
 int main() {
     TNode *head = NULL;
     head = CreateList();
+    printList(head);
+    head = insertAtBeginning(head);
     printList(head);
     return 0;
 }
