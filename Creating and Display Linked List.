@@ -40,6 +40,7 @@ TNode* CreateList() {
 int main() {
     TNode *head = NULL;
     head = CreateList();
+    printList(head);
     return 0;
 }
 
@@ -50,11 +51,4 @@ void printList(TNode *head) {
         head = head->next;
     }
     printf("END\n");
-}
-
-int main() {
-
-    printList(head);
-
-    return 0;
 }
